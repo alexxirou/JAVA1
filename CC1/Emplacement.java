@@ -12,7 +12,7 @@ class Emplacement {
                     // dans les limites données 
                     // ou REPERE_INCONNU
       
-        public static String info () {
+        public static String info() {
             
         }
     
@@ -21,10 +21,7 @@ class Emplacement {
         // renvoie true si val dans les limites données par minMax
         
             // à compléter I.3
-            for (int i = (int)minMax[0]; i <= (int)minMax[1]; i++){
-                if(val==i) return true;
-            }    
-            return false;    
+            return minMax[0]<=val && val<=minMax[1];
             
         }
      
@@ -33,7 +30,8 @@ class Emplacement {
         // vrai si longueur=2 et 
         // si les 2 lettres dans leurs limites respectives 
             
-            return (repere.length()==2 && dansLimites(repere.charAt(0), MIN_MAX_LIGNES) && dansLimites(repere.charAt(1), MIN_MAX_COL)? true : false;
+            return (repere.length()==2 && dansLimites(repere.charAt(0), MIN_MAX_LIGNES) &&
+             dansLimites(repere.charAt(1), MIN_MAX_COL))? true : false;
         }
     
         public void setRepere(String repere) {
@@ -47,7 +45,6 @@ class Emplacement {
             
         public Emplacement(char ligne, char colonne) {
             // à compléter I.6 b)
-            
             this(ligne + colonne);
         }
             
